@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <table id="tb" border="1px">
+        <tr>
+            <th>序号</th>
+            <th>id</th>
+            <th>姓名</th>
+            <th>性别</th>
+        </tr>
+        <tr v-for="(user,index) in users">
+            <td>{{index+1}}</td>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.sex}}</td>
+        </tr>
+    </table>
+
+    <script>
+        new Vue({
+            el: "#tb",
+            data: {
+                users: [
+                    { id: "1001", name: "张三", sex: "男" },
+                    { id: "1002", name: "张三", sex: "男" },
+                    { id: "1003", name: "张三", sex: "男" }
+                ]
+            }
+        });
+    </script>
+</body>
+
+</html>
